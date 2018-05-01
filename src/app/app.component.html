@@ -1,20 +1,72 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div id="navbar_searchbar_container"> 
+  <div id="navbar">
+    <div id="navbar_left">
+      <div class="navbar_logo_container">
+        <div class="nav_logo_text_container">
+          <div class="nav_logo_container"><img id="home_nav_logo" src="assets/icons/home.svg"></div>
+          <div class="nav_text_container"><p>Home</p></div>
+        </div>
+      </div>
+      <div class="navbar_logo_container"></div>
+    </div>
+    <div id="navbar_middle">
+      <div id="navbar_oval"><p>Math 206 123-456</p></div>
+    </div>
+    <div id="navbar_right">
+      <div class="navbar_logo_container">
+        <div class="nav_logo_text_container">
+          <div class="nav_logo_container"><img src="assets/icons/settings.svg"></div>
+          <div class="nav_text_container"><p>Settings</p></div>
+        </div>
+      </div>
+      <div class="navbar_logo_container">
+        <div class="nav_logo_text_container">
+          <div class="nav_logo_container"><img src="assets/icons/logout.svg"></div>
+          <div class="nav_text_container"><p>Logout</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="title_bar">
+    <p>Lesson Presenter</p>
+  </div>
+</div> 
+<div id="content_container">
+  <div id="content">
+    <div id="slide_presenter">
+      <div id="page_name_header">
+        <div id="page_name_left"></div>
+        <div id="page_header">
+          <!-- <p>{{current_slide.title}}</p> -->
+        </div>  
+        <div id="page_name_right">
+          <div id="show_panel_button" (click)="showMenu()">
+            <p>{{panelStatus}}</p>
+            <img class="arrow_icon" src="assets/icons/wiki_left_arrow.svg" *ngIf="!displayPanelsViewEnabled">
+            <img class="arrow_icon" src="assets/icons/wiki_right_arrow.svg" *ngIf="displayPanelsViewEnabled">
+          </div>  
+        </div>
+      </div>
+      <div id="display_panels_column_wrapper" [ngStyle]="{'left': rect, 'height' : page_scroll_height}" *ngIf="displayPanelsViewEnabled">
+        <div id="display_panels_column">
+          <div class="panel_thumbnail" *ngFor="let panel of classroomPanels">
+            <div class="panel"></div>  
+          </div>
+        </div>
+      </div> 
+      <div id="slide_controller">
+        <slide-viewer></slide-viewer>
+        <div id="page_and_notes_container">
+          <div id="page">
+            <swiper-viewer></swiper-viewer> 
+          </div>
+          <div id="notes_section">
+            <textarea id="notes" placeholder="Notes..."></textarea>
+          </div>
+        </div>  
+      </div>
+    </div> 
+    <lesson-plan-viewer></lesson-plan-viewer>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 

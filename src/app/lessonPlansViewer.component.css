@@ -1,0 +1,74 @@
+#lesson_plans_viewer_container {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: flex-end;
+    background-color: #ECF1F5;
+    /* box-shadow: inset 0 13px 9px -7px #ccc; */
+    box-shadow: inset 0 16px 9px -7px #ccc;
+  }
+
+  #lesson_plans_viewer{
+    width: 100%;
+    height: 80%;
+    box-shadow: 3px 3px 10px 6px #ccc;
+  }
+
+  #lesson_plans_header {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-bottom: 2px solid #ccc;
+  }
+
+  #lesson_plans_row {
+    width: 100%;
+    height: 75%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  #lesson_plans_scrollable_viewer {
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    background-color: white;
+  }
+
+  .lesson_plan_thumbnail {
+    width: 150px;
+    height: 100%;
+    display: inline-block;
+    background-color: white;
+    border-left: 2px solid #ccc;
+  }
+
+  .lesson_plan_thumbnail img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  @media (orientation: landscape) {
+    #lesson_plans_viewer {
+        width: 100%;
+        height: 90%;
+      }
+  }
+
+  @media (orientation: portrait) {
+    #lesson_plans_viewer{
+        width: 100%;
+        height: 80%;
+    }  
+  }
+
+
+
+
+
+
+
+

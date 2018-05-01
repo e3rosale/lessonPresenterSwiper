@@ -1,0 +1,7 @@
+<div id="page_scroll_viewer">
+    <div class="slide_thumbnail" *ngFor="let slide of powerPointPresentation; let i = index">
+      <div class="slide" (click)="selectSlide(slide, i)">
+        <img src={{slide.path_name}}>
+      </div>
+    </div>
+</div>

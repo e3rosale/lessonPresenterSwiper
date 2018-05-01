@@ -1,0 +1,12 @@
+<div id="lesson_plans_viewer_container">
+  <div id="lesson_plans_viewer">
+    <div id="lesson_plans_header"><p>Included Files</p></div>
+    <div id="lesson_plans_row">
+      <div id="lesson_plans_scrollable_viewer">
+        <div class="lesson_plan_thumbnail" *ngFor="let lesson of userLessonPlans, let i = index" (click)="selectLesson(i)">
+          <img src={{lesson.list[0].path_name}}>
+        </div>
+      </div>
+    </div>
+ </div>  
+</div>
